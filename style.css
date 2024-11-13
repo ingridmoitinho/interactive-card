@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+:root {
+    --gradient-start: hsl(249, 99%, 64%);
+    --gradient-end: hsl(278, 94%, 30%);
+    --error-red: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-violet: hsl(270, 3%, 87%);
+    --dark-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.card-section {
+    width: 40%;
+    background: url("./images/bg-main-desktop.png") no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 447px;
+    height: 245px;
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.card-front {
+    background-image: url(./images/bg-card-front.png);
+    top: 10%;
+    left: 85%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    transform: translateX(-50%);
+}
+
+.card-logo {
+    width: 5rem;
+    height: 3rem;
+}
+
+.card-number-display {
+    font-size: 1.6em;
+    letter-spacing: 2px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;   
+}
+
+.card-details span {
+    font-size: 0.8em;
+}
+
+.card-back {
+    background-image: url('./images/bg-card-back.png');
+    background-size: cover;
+    top: 70%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    width: 24rem;
+}
+
+.cvc-display {
+    position: absolute;
+    right: 60px;
+    top: 110px;
+}
+
+.form-section {
+    width: 60%;
+    margin-left: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-form {
+    width: 22rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    color: var(--very-dark-violet);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-violet);
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus {
+    border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end)) 1;
+}
+
+.error {
+    border-color: var(--error-red);
+}
+
+.error-message {
+    color: var(--error-red);
+    font-size: 0.7em;
+    margin-top: 5px;
+    display: none;
+}
+
+.date-cvc-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.date-group {
+    display: flex;
+    gap: 0.8rem;   
+    width: 11rem;
+}
+
+.date-input-container {
+    position: relative;
+}
+
+.date-input {
+    width: 5rem;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--very-dark-violet);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.complete-state {
+    text-align: center;
+    display: none;
+}
+
+.complete-state img {
+    margin-bottom:  1.875rem;
+}
+
+.complete-state h2 {
+    color: var(--very-dark-violet);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.complete-state p {
+    color: var(--dark-violet);
+    margin-bottom: 1.875rem;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .card-section {
+        width: 100%;
+        height: 40vh;
+        margin-bottom: 4rem;
+    }
+
+    .form-section {
+        width: 100%;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .card-front,
+    .card-back {       
+        width: 18rem;
+        height: 10rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .card-front {
+        top: 50%;
+        z-index: 2;
+        transform: translateX(-55%);
+    }
+
+    .card-back {
+        top: 10%;
+        z-index: 1;
+    }
+
+    .card-logo {
+        width: 4rem;
+        height: 2rem;
+    }
+    
+    .card-number-display {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+    
+    .card-details {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;   
+    }
+    
+    .card-details span {
+        font-size: 0.7em;
+    }
+
+    .cvc-display {
+        right: 30px;
+        top: 4.2rem;
+    }
+}

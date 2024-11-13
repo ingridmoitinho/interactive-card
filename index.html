@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+
+<body>
+  <main class="container">
+   <div class="card-section">
+       <div class="card-front">
+         <img src="./images/card-logo.svg" alt="Card logo" class="card-logo">
+       <div class="card-number-display">0000 0000 0000 0000</div>
+       <div class="card-details">       
+         <span class="cardholder-display">Jane Appleseed</span>
+         <span class="expiry-display">00/00</span>
+       </div>
+     </div>
+     <div class="card-back">
+       <p class="cvc-display">000</p>
+     </div>
+   </div>
+
+   <div class="form-section">
+     <form id="card-form" class="card-form">
+       <div class="form-group">
+         <label for="cardholder">Cardholder Name</label>
+         <input type="text" id="cardholder" placeholder="e.g. Jane Appleseed">
+         <p class="error-message">Can't be blank</p>
+       </div>
+
+       <div class="form-group">
+         <label for="cardnumber">Card Number</label>
+         <input type="text" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+         <p class="error-message">Wrong format, numbers only</p>
+       </div>
+       <div class="form-group date-cvc-group">
+        <div class="date-container">
+            <label>Exp. Date (MM/YY)</label>
+            <div class="date-group">
+                <div class="date-input-container">
+                    <input type="text" id="month" placeholder="MM" class="date-input" maxlength="2">
+                    <p class="error-message">Invalid month</p>
+                </div>
+                <div class="date-input-container">
+                    <input type="text" id="year" placeholder="YY" class="date-input" maxlength="2">
+                    <p class="error-message">Can't be blank</p>
+                </div>
+            </div>
+        </div>
+
+         <div>
+           <label for="cvc">CVC</label>
+           <input type="text" id="cvc" placeholder="e.g. 123" maxlength="3">
+           <p class="error-message">Can't be blank</p>
+         </div>
+       </div>
+
+       <button type="submit">Confirm</button>
+     </form>
+
+     <div class="complete-state">
+       <img src="./images/icon-complete.svg" alt="Complete">
+       <h2>Thank you!</h2>
+       <p>We've added your card details</p>
+       <button type="button" onclick="resetForm()">Continue</button>
+     </div>
+   </div>
+ </main>
+
+ <script src="./script.js"></script>
+
+</body>
+
+</html>
